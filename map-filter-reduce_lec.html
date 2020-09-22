@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <title>Map, Filter, Reduce Lecture</title>
+</head>
+<body>
+    <main class="container">
+        <h1>Map Filter Reduce Lecture</h1>
+    </main>
+
+<script>
+"use strict";
+{
+
+    // ========= MAP
+
+    /*
+        From an array, use map to return another array of the same length, transforming elements as needed.
+     */
+
+    const fruits1 = ['apple', 'orange', 'banana'];
+
+    // return an array of string lengths using map
+    // const strLengths = fruits1.map(fruit => fruit.length);
+    // console.log(strLengths); //[5, 6, 6]
+
+    // return an array of the first two letters of each string
+    // const firstTwoLettersArr = fruits1.map(fruit => fruit.slice(0, 2));
+    // console.log(firstTwoLettersArr); // ['ap', 'or', 'ba']
+
+
+    // create messages for each fruit
+        // const diet = fruits.map(fruit => `Currently eating ${fruit}`);
+        // console.log(diet);
+
+    // create an ordered list of fruit
+        // const html = fruits.map(fruit => `<li>${fruit}</li>`).join("");
+        // document.write(`<ol class="fruits">${html}</ol>`);
+
+    const family1 = [
+        {
+            name: "Sally",
+            gender: "female",
+            age: 29,
+        },
+        {
+            name: "Emily",
+            gender: "female",
+            age: 10,
+        },
+        {
+            name: "Fred",
+            gender: "male",
+            age: 32,
+        },
+    ];
+
+    // create an array of just names for each person
+    //     const names = family1.map(person => person.name);
+    //     console.log(names);
+
+    // create an array of lengths of first names
+    //     const nameLengths = family1.map(({ name }) => name.length);
+    //     console.log(nameLengths);
+
+    // create an array of people where everyone is two years older
+
+        // function makeOlderFamily(person) { // THIS MUTATES THE ORIGINAL!
+        //     person.age += 2;
+        //     return person;
+        // }
+
+        // // using ES6 destructuring to clone person
+        // function makeOlderFamily({ name, gender, age }) { // This does not mutate original objects
+        //     return {name, gender, age: age + 2};
+        // }
+        //
+        // // using older ES5 syntax to clone person
+        // function makeOlderFamily(person) { // This does not mutate original objects
+        //     return {
+        //         name: person.name,
+        //         gender: person.gender,
+        //         age: person.age + 2
+        //     };
+        // }
+        //
+        // const olderFamily = family1.map(makeOlderFamily);
+        // console.log(olderFamily);
+        // console.log(family1);
+
+
+    // ========= FILTER
+    /*
+        From an array, use filter to create a new array of elements that pass a filtering test.
+     */
+
+    const fruits2 = ['banana', 'apple', 'orange', 'banana'];
+
+    // remove banana's from list of favorite fruits
+    //     const favoriteFruits = fruits2.filter(fruit => fruit !== 'banana');
+
+    // const favoriteFruits = fruits2.filter(function(fruit) {
+    //     return fruit !== 'banana';
+    // });
+
+        // console.log(favoriteFruits);
+
+    // create array of fruits with names shorter than six characters
+    // output should be ['apple']
+    // const shortFruitNames = fruits2.filter(fruit => fruit.length < 6);
+    // console.log(shortFruitNames);
+    // console.log(fruits2);
+
+
+
+    const family2 = [
+        {
+            name: "Sally",
+            gender: "female",
+            age: 29,
+        },
+        {
+            name: "Emily",
+            gender: "female",
+            age: 10,
+        },
+        {
+            name: "Fred",
+            gender: "male",
+            age: 32,
+        },
+    ];
+
+    // Filter out male family members
+        // const females = family2.filter(person => person.gender === "female");
+        // console.log(females);
+
+
+    // ========= REDUCE
+    /*
+        From an array, use reduce to transform the elements of the array into another single value of any type
+        Array.reduce(function(accumulator, currentValue) {
+        }, initialValue);
+     */
+
+   /*
+       Array.map(function)
+       Array.filter(function)
+       Array.reduce(function, initialValue)
+    */
+   // const numbers = [1, 2, 3];
+   // const total = numbers.reduce(function(accum, curr) {
+   //     return accum + curr;
+   // }, 0);
+   // console.log(total);
+
+    // const fruits3 = ['apple', 'orange', 'banana']; // 'appleorangebanana'
+    // const largeFruitStr = fruits3.reduce(function(accum, curr) {
+    //     /*
+    //         no | accum        | curr
+    //         1  | ''           | 'apple'
+    //         2  | 'apple'      | 'orange'
+    //         3  | 'appleorange'| 'banana'
+    //         return 'appleorangebanana'
+    //      */
+    //     return accum += curr;
+    // }, 'The fruits: ');
+    // console.log(largeFruitStr);
+
+    // const output = '' + 1 + 1 + '1'; // '111'
+
+
+    const numbers = [1, 2, 3]; // expected output [1, 3]
+
+    // filter out even numbers using reduce
+    const oddNums = numbers.reduce((accum, curr) => {
+        if (curr % 2 !== 0) {
+            accum.push(curr);
+        }
+        return accum; // my mistake in the lecture: you have to return the array from the function or it will break later on
+    }, []);
+    console.log(oddNums);
+
+
+    // const fruits3 = ['apple', 'pineapple', 'banana']; // 'pineapple'
+    // const longestFruit = fruits3.reduce((accum, curr) => {
+    //     if (curr.length > accum.length) {
+    //         return curr;
+    //     } else {
+    //         return accum;
+    //     }
+    // }, '');
+
+    // const longestFruit = fruits3.reduce((accum, curr) => (curr.length > accum.length) ? curr : accum, '');
+    // console.log(longestFruit);
+
+    // return fruit with longest name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   // concatenate all fruit names into one larger string
+       // const smoothie = fruits3.reduce((total, current) => total += current );
+       // console.log(smoothie);
+
+
+    const family3 = [
+        {
+            name: "Sally",
+            gender: "female",
+            age: 29,
+        },
+        {
+            name: "Emily",
+            gender: "female",
+            age: 10,
+        },
+        {
+            name: "Fred",
+            gender: "male",
+            age: 32,
+        },
+    ];
+
+    // output 71
+
+    // get total ages of all family members using reduce
+    // const totalAges = family3.reduce((totalMemberAges, familyMember) => {
+    //     return totalMemberAges + familyMember.age;
+    // }, 0);
+    //
+    // console.log(totalAges);
+
+
+
+
+    // add ages of all family members up
+        // const totalAges = family3.reduce((total, current) => total + current.age, 0);
+        // console.log(totalAges);
+
+}
+</script>
+</body>
+</html>

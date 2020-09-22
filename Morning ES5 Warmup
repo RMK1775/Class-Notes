@@ -1,0 +1,26 @@
+# Morning Warmup
+
+1. Create a new HTML file called `es5-warmup.html`
+2. Include the following HTML in the body:
+	
+	```	
+	<main>
+		<div>bob</div>
+		<div>STEVE</div>
+		<div>sAlLY</div>
+	</main>
+	```
+1. Include script tags with the following object:
+
+	```
+	var name = {lName: "smith"};
+	```
+1. Write the needed JavaScript (without jQuery) to produce the following output in the browser:
+
+	```
+	Bob Smith
+	Steve Smith
+	Sally Smith
+	```
+
+If you have enough time, try refactor your code to express a solution as simply as possible.

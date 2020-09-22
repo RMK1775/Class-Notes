@@ -1,0 +1,93 @@
+
+/*var test = false; 
+  var tS = x.toLowerCase();
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  var j = tS.length;
+  for (var i = 0; i < j; i++){
+    if (tS.charAt(i) == vowels[i]){
+      test = true;
+      break;
+    }
+  }*/
+
+  function removeVowels(str){
+  var thisStr = str;
+  var newStr = "";
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+   for (var i = 0; i < thisStr.length; i++){
+    for (var j = 0; j < 5; j++){
+      if (thisStr.charAt(i) == vowels[j]){
+        newStr = newStr.slice(i, 1);
+      }
+    }
+  }
+  return(newStr);
+}
+
+function firstToLast(x){
+  var mover = [x[0]];
+  var newArray = [x];
+  newArray.shift();
+  newArray.concat(mover);
+  return(newArray);
+}
+
+function getRandomInt(min, max) {
+    min = Math.floor(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function returnNumberSail() {
+    let str = ''
+    for (let i = 1; i < 10; i++) {
+        let j = i.toString()
+        str += j.repeat(i);
+        
+        if (i !== 9) str += '\n'
+    }
+    return str;
+}
+
+//returnNumberSail Function
+let returnNumberSail = function() {
+ let output2 = "";
+     for (let b = 1; b < 10; b++) {
+         output2 += String(b).repeat(b);
+         if (b !== 9) output2 += '\n'
+     } return output2;
+}
+console.log(returnNumberSail());
+
+Output += row + ‘\n’ 
+
+function conesToSellForTheDay() {
+    var allCones = Math.floor(Math.random() * 50) + 50;
+    do {
+        var customerPurchase = Math.floor(Math.random() * 5) + 1;
+        if (allCones === 0) {
+            console.log("Yay! I sold them all.")
+            break;
+        } else if (customerPurchase > allCones) {
+            console.log("I can't sell you " + customerPurchase + " cones because I only have " + allCones)
+        } else {
+            console.log(customerPurchase + " cones sold")
+            allCones -= customerPurchase
+        }
+    } while (allCones >= 0)
+}
+
+function palindrome(str) {   var re = /[\W_]/g;   var lowRegStr = str.toLowerCase().replace(re, '');   var reverseStr = lowRegStr.split('').reverse().join('');    return reverseStr === lowRegStr; } 
+function palindrome(phrase){
+phrase = phrase.split(" ").join("")
+var revPhrase = phrase.split("").reverse().join("");
+return phrase === revPhrase ? 'Phrase is a palindrome':'Phrase is not a palindrome';
+}
+
+// This is how you get a random number between 50 and 100
+var allCones = Math.floor(Math.random() * 50) + 50;
+// This expression will generate a random number between 1 and 5
+Math.floor(Math.random() * 5) + 1;
+
+array.filter((x, i, a) => a.indexOf(x) === i);
+Additional parameters can be defined for .filter() just like .forEach() and the order is just like in a forEach (element, index, array). With that being the case, this is filtering out any duplicate entries because it only allows elements to stay in the filtered array if the current index the filter method is looking in the array is the same as the index of when the element first occurs in the array. 

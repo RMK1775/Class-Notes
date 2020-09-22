@@ -1,0 +1,175 @@
+# ES5 vs. ES6 Syntax Guide
+
+### Exponentiation - shorthand for raising a number to a power
+
+Raising a four to the second power:
+
+ES5
+
+```
+Math.pow(4, 2)
+```
+
+ES6
+
+```
+4**2
+```
+
+### Variable Declarations - new keywords with block scope
+
+Defining a variable:
+
+ES5
+
+```
+var someValue;
+```
+
+ES6
+
+```
+let someValue;
+// or
+const someValue;
+```
+
+### Template Strings - shorthand for concatenating strings
+
+Combining the strings "hello" and "world":
+
+ES5
+
+```
+var hello = "hello";
+var world = "world";
+var str = hello + " " + world;
+```
+
+ES6
+
+```
+const hello = "hello";
+const world = "world";
+const str = `${hello} ${world`;
+```
+
+### For...Of Loop - a newer loop that can iterate over DOM nodes
+
+Logging the inner text of all divs (nodelist):
+
+ES5
+
+```
+const divs = document.querySelectorAll('div');
+for (var i = 0; i < divs.length; i += 1) {
+	console.log(divs[0].innerText);
+}
+```
+
+ES6
+
+```
+const divs = document.querySelectorAll('div');
+for (let div of divs) {
+	console.log(div.innerText);
+}
+```
+
+### Arrow Functions - shorthand for writing function expressions
+
+Defining a function expression that simply returns a given input:
+
+ES5
+
+```
+var returnInput = function(input) {
+	return input;
+}
+returnInput(4); // returns 4
+```
+
+ES6
+
+```
+const returnInput = input => input;
+returnInput(4); // returns 4
+```
+
+### Default Parameters Values - shorthand for defining default parameter values
+
+Defining a log function that will log "hello" if no defined input:
+
+ES5
+
+```
+var log = function(input) {
+	if (input === undefined) {
+		input = "hello";
+	}
+	console.log(input);
+};
+log(); // logs "hello"
+```
+
+ES6
+
+```
+const log = (input = "hello") => {
+	console.log(input);
+}
+```
+
+### Object Assignment - shorthand for building an object from variables
+
+Creating an object from a first and last name variable:
+
+ES5
+
+```
+var first = "bob";
+var last = "smith";
+var name = {
+	first: first,
+	last: last
+};
+```
+
+ES6
+
+```
+const first = "bob";
+const last = "smith";
+const name = {
+	first,
+	last
+};
+```
+
+### Destructuring - shorthand for creating variables from an object or array
+
+Creating variables from object:
+
+ES5
+
+```
+var name = {
+	first: "bob",
+	last: "smith"
+};
+var first = name.first;
+var last = name.last;
+console.log(first + " " + last);
+```
+
+ES6
+
+```
+const name = {
+	first: "bob",
+	last: "smith"
+};
+const { first, last } = name;
+console.log(`${first} ${last}`);
+```
+

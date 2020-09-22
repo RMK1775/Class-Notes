@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESTful API Requests</title>
+</head>
+<body>
+
+    <h1>RESTful API Requests</h1>
+    <script src="js/dog-api.js"></script>
+    <script>
+
+        "use strict";
+
+        // console.log all dogs
+getDogs().then(dogs => {console.log(dogs)});
+        // alert the name of the first dog
+getDog(1).then(dog =>{
+    alert("First name is: " + dog.name);
+})
+        // delete the second dog
+
+    </script>
+
+</body>
+</html> 
